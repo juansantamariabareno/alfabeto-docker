@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+
+#docker run -p 9090:80 -v E:/GitHub/alfabeto-docke:/var/www/html --name servidorphp -d --link basedatos php:7.0-apache
+  app:
+    image: jsantamariab/php_apache:v1
+    ports:
+      - 9090:80
+    volumes:
+      - E:/GitHub/alfabeto-docker:/var/www/html
+    environment:
+      MYSQL_PASSWORD: secret
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_DB: alfabeto
+#docker run -p 3306:3306 --name basedatos -v E:/GitHub/alfabeto-docke/database:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=secret -d mysql:5.7
+  mysql:
+    image: jsantamariab/basedatos_mysql:v1
+    volumes:
+      - E:/GitHub/alfabeto-docker/database:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: alfabeto
