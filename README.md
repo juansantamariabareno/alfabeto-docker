@@ -4,6 +4,7 @@ Prueba Alfabeto Docker
 1. Realice un docker pull a las siguientes imagenes
     - docker pull jsantamariab/php_apache:v1
     - docker pull jsantamariab/basedatos_mysql:v1
+    
     Estas imagenes contienen los contenedores del servidor en php con apache y de la base de datos
 
 2. Edite las etiquetas de volumen en el docker-compose.yaml con la ruta en la cual ha clonado este directorio
